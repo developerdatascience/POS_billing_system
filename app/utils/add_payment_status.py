@@ -8,6 +8,7 @@ def add_payment_status(db, sale_id: int, amount_paid: float, payment_mode: str, 
         payment_status=payment_status
     )
     db.add(payment)
-    db.commit()
-    db.refresh(payment)
-    return {"message": "Payment transaction recorded", "transaction_id": payment.transaction_id}
+    # db.commit()
+    # db.refresh(payment)
+    # return {"message": "Payment transaction recorded", "transaction_id": payment.transaction_id}
+    return payment

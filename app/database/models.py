@@ -115,6 +115,7 @@ class Inventory(Base):
     inventory_id = Column(Integer, primary_key=True)
     product_id = Column(Integer, ForeignKey("products.product_id"), unique=True)
     quantity_available = Column(Integer, default=0)
+    reorder_level = Column(Integer, default=0)
     last_restock_date = Column(Date)
     last_updated = Column(DateTime, default=datetime.now(), onupdate=datetime.now)
 
